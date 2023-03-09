@@ -1,5 +1,7 @@
 {
   "recommendations": [
-    "rocketseat.theme-omni"
+    "rocketseat.theme-omni",
+    "naumovs.color-highlight",
+    "shakram02.bash-beautify"
   ]
 }

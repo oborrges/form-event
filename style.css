@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 
-body, label, input, button, select, span, textarea {
+body, label, input, select, span, textarea {
   font-family: 'Poppins', sans-serif;
 }
 
@@ -26,7 +26,7 @@ body::before {
 
 .page {
   width: 736px;
-  margin: auto;
+  margin: 0 auto 50px;
 }
 
 header {
@@ -57,10 +57,15 @@ form {
   margin-top: 42px;
   background: #FAFAFC;
   min-height: 300px;
-  border-radius: 8px;
+  border-radius: 8px 8px 0 0;
 
   padding: 64px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
 }
+
 
 fieldset {
   border: none;
@@ -105,7 +110,8 @@ fieldset legend {
   color: #868588;
 }
 
-.input-wrapper input {
+.input-wrapper input,
+.input-wrapper select {
   background: #FAFAFC;
   height: 56px;
   
@@ -116,7 +122,7 @@ fieldset legend {
   line-height: 26px;
 
   padding: 0 24px;
-  color: #C1BCCC;
+  color: #4E4958;
 
   margin-top: 8px;
 }
@@ -136,3 +142,141 @@ fieldset legend {
 
   margin-top: 8px;
 }
+
+.input-wrapper #envent-password {
+  background-image: url("data:image/svg+xml,%3Csvg width='15' height='21' viewBox='0 0 15 21' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.7826 8.21698V5.47828C12.7826 2.45242 10.3296 0 7.30427 0C4.27847 0 1.826 2.45242 1.826 5.47828V8.21698C0.817627 8.21698 0 9.03461 0 10.043V19.1739C0 20.1825 0.817627 21 1.826 21H12.7826C13.791 21 14.6085 20.1824 14.6085 19.1739V10.043C14.6085 9.03461 13.791 8.21698 12.7826 8.21698ZM3.65211 5.47828C3.65211 3.46096 5.28736 1.82611 7.30427 1.82611C9.3213 1.82611 10.9566 3.4609 10.9566 5.47828V8.21698H3.65211V5.47828ZM12.7826 19.1738H1.826V10.0434H12.7826V19.1738ZM6.39122 15.2685V16.4347C6.39122 16.9385 6.80032 17.3477 7.30427 17.3477C7.80811 17.3477 8.21733 16.9385 8.21733 16.4347V15.2685C8.7603 14.9521 9.13039 14.3697 9.13039 13.6957C9.13039 12.6868 8.31264 11.8691 7.30427 11.8691C6.29591 11.8691 5.47828 12.6868 5.47828 13.6957C5.47828 14.3697 5.84801 14.9521 6.39122 15.2685Z' fill='%234E4958'/%3E%3C/svg%3E%0A");
+  background-repeat: no-repeat;
+  background-position: right 24px top 50%;
+}
+
+.input-wrapper select {
+  appearance: none;
+  -webkit-appearance: none;
+
+  background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_1_54)'%3E%3Cpath d='M8 10L12 14L16 10' stroke='%239C98A6' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_1_54'%3E%3Crect width='24' height='24' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+  background-repeat: no-repeat;
+  background-position: right 24px top 50%;
+}
+
+/* Hide the default checkbox */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+  border-radius: 5px;
+}
+
+.container {
+  display: flex;
+  gap: 16px;
+  position: relative;
+  cursor: pointer;
+  font-size: 16px;
+  user-select: none;
+  border-radius: 5px;
+  padding-top: 24px;
+}
+
+.container span {
+  font-size: 14px;
+  line-height: 24px;
+  
+  color: #4E4958;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 1.3em;
+  width: 1.3em;
+  background-color: #ccc;
+  border-radius: 5px;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  box-shadow: 3px 3px 0px rgb(183, 183, 183);
+  transition: all 0.2s;
+  opacity: 1;
+  background-image: linear-gradient(45deg, rgb(5, 5, 5) 0%, hwb(300 87% 11%) 100%);
+}
+
+.container input ~ .checkmark {
+  transition: all 0.2s;
+  opacity: 1;
+  box-shadow: 1px 1px 0px rgb(183, 183, 183);
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  opacity: 0;
+  transition: all 0.2s;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  opacity: 1;
+  transition: all 0.2s;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 0.45em;
+  top: 0.25em;
+  width: 0.25em;
+  height: 0.5em;
+  border: solid white;
+  border-width: 0 0.15em 0.15em 0;
+  transform: rotate(45deg);
+  }
+
+.coluns-3 {
+  display: flex; 
+  gap: 20px;
+}
+
+.coluns-3 > div:nth-child(1) {
+  width: 100%;
+}
+
+footer {
+  width: 736px;
+  height: 136px;
+
+  background: #F0F0F4;
+  border-radius: 0px 0px 8px 8px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid #D6D6D6;
+}
+
+button {
+  width: 608px;
+  height: 56px;
+
+  background-image: linear-gradient(45deg, rgb(5, 5, 5) 0%, hwb(0 81% 15%) 100%);
+  border-radius: 8px;
+  border: none;
+
+  font-family: 'Archivo', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 26px;
+
+  color: #FFFFFF;
+}
+
+button:hover {
+  background-image: linear-gradient(45deg, rgb(221, 212, 212) 0%, hwb(0 0% 100%) 100%);
+  color: #ffffff;
+  border: 2px solid black;
+}
+

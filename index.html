@@ -54,8 +54,67 @@
           <textarea  id="event-textarea" ></textarea>
         </div>
 
+        <div class="input-wrapper">
+          <label for="event-select">Categoria</label> 
+          <select id="event-select">
+            <option value="">Tipo do evento</option>
+            <option value="live">Ao vivo</option>
+            <option value="podcast">Podcast</option>
+            <option value="mentoring">Mentoria</option>
+          </select>
+        </div>
+
       </fieldset>
+
+      <fieldset>
+        <legend>Privacidade</legend>
+
+        <div class="input-wrapper">
+          <label for="envent-email">E-mail do administrador<span>(digite um email válido)</span></label> 
+          <input id="envent-email" type="email">
+        </div>
+
+        <div class="input-wrapper">
+          <label for="envent-password">Senha de acesso para os participantes<span>(mínimo 8 caracteres)</span></label> 
+          <input id="envent-password" type="password">
+        </div>
+
+        <label class="container">
+          <input type="checkbox" checked="checked">
+          <div class="checkmark"></div>
+          <span> Evento privado </span>
+        </label>
+      </fieldset>
+      
+        <fieldset>
+          <legend>Dia e hora</legend>
+
+          <div class="coluns-3">
+            <div class="input-wrapper">
+              <label for="envent-date">Data</label> 
+              <input id="envent-date" type="date">
+            </div>
+  
+            <div class="input-wrapper">
+              <label for="envent-time">Das</label> 
+              <input id="envent-time" type="time">
+            </div>
+  
+            <div class="input-wrapper">
+              <label for="envent-time">Até</label> 
+              <input id="envent-time" type="time">
+            </div>
+          </div>
+  
+        </fieldset> 
+        
+        
     </form>
+
+    <footer>
+      <button>Salvar evento</button>
+    </footer>
   </div>
+
 </body>
 </html>
