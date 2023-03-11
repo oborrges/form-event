@@ -39,13 +39,18 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - CSS
 - FIGMA
 
+
+## ☁ Deploy:
+
+LINK: https://oborrges.github.io/form-event/
+
 ## 🚧 Projeto:
 
 Em cunstrução, sera adicionada responsividade
 
 ## 🎨 Inspiração:
 
-Figma: https://www.figma.com/file/K3YZ1GJnMyRYss1p8XgzPz/Stage-03---Formul%C3%A1rio-intermedi%C3%A1rio-(Copy)?node-id=0%3A1&t=zMYDZSSVJL6JfHff-0
+Figma: https://www.figma.com/file/lFYufJZ2PXXxvQ8iMLwnR5/Explorer-Stage-03-Projeto-01-(Copy)?node-id=0%3A1&t=tCpJyzGy11qLdksc-0
 
 ## :memo: Licença
 
